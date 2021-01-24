@@ -1,10 +1,10 @@
 spring:
   application:
-    name: estabelecimento-service
+    name: store-service
 
   data:
     mongodb:
-      database: estabelecimento
+      database: store
 
   cloud:
     stream:
