@@ -15,8 +15,8 @@ spring:
             key:
               serializer: org.apache.kafka.common.serialization.StringSerializer
       bindings:
-        momentsPostChanged:
-          destination: moments.post.changed
+        momentsStoreChanged:
+          destination: moments.store.changed
           contentType: application/json
 
 server:
