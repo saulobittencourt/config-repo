@@ -9,16 +9,16 @@ zuul:
   routes:
     auth:
       path: /auth/**
-      serviceId: auth-service
+      url: http://localhost:9000/v1/api/users
     store:
       path: /store/**
-      serviceId: store-service
+      url: http://localhost:8001/v1/api/stores
     order:
       path: /order/**
-      serviceId: order-service
+      url: http://localhost:8002/v1/api/orders
     ribbon:
       path: /ribbon-server/**
-      serviceId: ribbon-server
+      url: http://localhost:8182/v1/api/ribbon
       
 hystrix:
   command:
