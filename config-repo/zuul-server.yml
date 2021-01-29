@@ -9,13 +9,16 @@ zuul:
   routes:
     auth:
       path: /auth/**
-      serviceId: AUTH-SERVICE
+      serviceId: auth-service
     store:
       path: /store/**
-      serviceId: STORE-SERVICE
+      serviceId: store-service
     order:
       path: /order/**
-      serviceId: ORDER-SERVICE
+      serviceId: order-service
+    ribbon:
+      path: /ribbon-server/**
+      serviceId: ribbon-server
       
 hystrix:
   command:
