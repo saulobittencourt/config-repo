@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8081}
+  port: 8081
 
 security:
   basic:
@@ -7,12 +7,15 @@ security:
 
 zuul:
   routes:
-    produto:
-      path: /client-produto/**
-      serviceId: PRODUTO-SERVICE
-    orcamento:
-      path: /client-orcamento/**
-      serviceId: ORCAMENTO-SERVICE
+    auth:
+      path: /auth/**
+      serviceId: AUTH-SERVICE
+    store:
+      path: /store/**
+      serviceId: STORE-SERVICE
+    order:
+      path: /order/**
+      serviceId: ORDER-SERVICE
       
 hystrix:
   command:
