@@ -19,7 +19,11 @@ zuul:
     ribbon:
       path: /ribbon-server/**
       url: http://localhost:8182/v1/api/ribbon
-      
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 30000
+
 hystrix:
   command:
     default:
