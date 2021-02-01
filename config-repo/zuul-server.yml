@@ -13,14 +13,9 @@ eureka:
     service-url:
       default-zone: http://localhost:8761/eureka/
     fetch-registry: true
-    
+
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
-  routes:
-    auth:
-      path: /auth/**
-      serviceId: auth-service
-      stripPrefix: true
   max:
     host:
       connections: 500
