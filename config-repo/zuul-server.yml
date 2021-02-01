@@ -30,6 +30,10 @@ ribbon:
     enabled: true
 
 zuul:
+  routes:
+    auth:
+      path: /auth/**
+      serviceId: auth-service
   max:
     host:
       connections: 500
