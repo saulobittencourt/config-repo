@@ -27,11 +27,12 @@ server:
 
 eureka:
   instance:
-    appname: store-service
-    preferIpAddress: true
+    hostname: localhost
   client:
     service-url:
       default-zone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
 
 security:
   basic:
