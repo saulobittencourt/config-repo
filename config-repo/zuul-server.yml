@@ -1,27 +1,27 @@
 spring:
   application:
     name: ZUUL-SERVER
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      httpclient:
-        pool:
-          max-idle-time: 60000
-      routes:
-        - id: order
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/order/**
-        - id: store
-          uri: lb://STORE-SERVICE
-          predicates:
-            - Path=/store/**
-        - id: auth
-          uri: lb://AUTH-SERVICE
-          predicates:
-            - Path=/auth/**
+  # cloud:
+  #   gateway:
+  #     discovery:
+  #       locator:
+  #         enabled: true
+  #     httpclient:
+  #       pool:
+  #         max-idle-time: 60000
+  #     routes:
+  #       - id: order
+  #         uri: lb://ORDER-SERVICE
+  #         predicates:
+  #           - Path=/order/**
+  #       - id: store
+  #         uri: lb://STORE-SERVICE
+  #         predicates:
+  #           - Path=/store/**
+  #       - id: auth
+  #         uri: lb://AUTH-SERVICE
+  #         predicates:
+  #           - Path=/auth/**
 
 server:
   port: 8081
