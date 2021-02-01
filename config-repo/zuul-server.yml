@@ -8,10 +8,14 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order/**
-        - id: order-service
-          uri: lb://ORDER-SERVICE
+        - id: store-service
+          uri: lb://STORE-SERVICE
           predicates:
-            - Path=/order/**
+            - Path=/store/**
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/auth/**
 
 server:
   port: 8081
