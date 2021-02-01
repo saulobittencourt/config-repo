@@ -7,15 +7,15 @@ spring:
         pool:
           max-idle-time: 60000
       routes:
-        - id: order-service
+        - id: order
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order/**
-        - id: store-service
+        - id: store
           uri: lb://STORE-SERVICE
           predicates:
             - Path=/store/**
-        - id: auth-service
+        - id: auth
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
