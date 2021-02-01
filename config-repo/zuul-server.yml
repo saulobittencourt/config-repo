@@ -5,15 +5,15 @@ spring:
     gateway:
       routes:
         - id: order-service
-          uri: lb://order-service
+          uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order/**
         - id: store-service
-          uri: lb://store-service
+          uri: lb://STORE-SERVICE
           predicates:
             - Path=/store/**
         - id: auth-service
-          uri: lb://auth-service
+          uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
 
