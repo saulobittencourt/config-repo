@@ -1,83 +1,13 @@
 spring:
   application:
-    name: ZUUL-SERVER
-  # cloud:
-  #   gateway:
-  #     discovery:
-  #       locator:
-  #         enabled: true
-  #     httpclient:
-  #       pool:
-  #         max-idle-time: 60000
-  #     routes:
-  #       - id: order
-  #         uri: lb://ORDER-SERVICE
-  #         predicates:
-  #           - Path=/order/**
-  #       - id: store
-  #         uri: lb://STORE-SERVICE
-  #         predicates:
-  #           - Path=/store/**
-  #       - id: auth
-  #         uri: lb://AUTH-SERVICE
-  #         predicates:
-  #           - Path=/auth/**
+    name: zuul-server
 
 server:
   port: 8081
-
-security:
-  basic:
-    enabled: false
 
 eureka:
   instance:
     hostname: localhost
   client:
     service-url:
-      default-zone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: hystrix.stream
-
-# hystrix:
-#   command:
-#     fallbackcmd:
-#       execution:
-#         isolation:
-#           thread:
-#             timeoutInMilliseconds: 5000
-
-# zuul:
-#   routes:
-#     auth:
-#       path: /auth/**
-#       url: http://localhost:9000/v1/api/users
-#     store:
-#       path: /store/**
-#       url: http://localhost:8001/v1/api/stores
-#     order:
-#       path: /order/**
-#       url: http://localhost:8002/v1/api/orders
-#     ribbon:
-#       path: /ribbon-server/**
-#       url: http://localhost:8182/v1/api/ribbon
-
-# ribbon:
-#   ConnectTimeout: 10000
-#   ReadTimeout: 30000
-#   eureka:
-#     enabled: false
-
-# hystrix:
-#   command:
-#     default:
-#       execution:
-#         isolation:
-#           thread:
-#             timeoutInMilliseconds: 60000
+      default-zone: http://localhost:8761/eureka/
