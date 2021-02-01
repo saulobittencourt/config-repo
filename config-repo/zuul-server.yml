@@ -34,6 +34,7 @@ ribbon:
     enabled: true
 
 zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
   routes:
     auth:
       path: /auth/**
