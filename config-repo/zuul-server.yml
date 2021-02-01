@@ -3,6 +3,9 @@ spring:
     name: ZUUL-SERVER
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
       httpclient:
         pool:
           max-idle-time: 60000
@@ -36,19 +39,19 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: hystrix.stream
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: hystrix.stream
 
-hystrix:
-  command:
-    fallbackcmd:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 5000
+# hystrix:
+#   command:
+#     fallbackcmd:
+#       execution:
+#         isolation:
+#           thread:
+#             timeoutInMilliseconds: 5000
 
 # zuul:
 #   routes:
