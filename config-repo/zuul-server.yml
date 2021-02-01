@@ -6,19 +6,15 @@ server:
   port: 8081
 
 eureka:
-  instance:
-    hostname: localhost
-    prefer-ip-address: true
   client:
     service-url:
       default-zone: http://localhost:8761/eureka/
     fetch-registry: true
+    register-with-eureka: true
 
-zuul:
-  sensitiveHeaders: Cookie,Set-Cookie
-  max:
-    host:
-      connections: 500
-  host:
-    socket-timeout-millis: 5000000
-    connect-timeout-millis: 5000000
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "routes"
