@@ -38,9 +38,10 @@ zuul:
     auth:
       path: /auth/**
       serviceId: auth-service
+      stripPrefix: true
   max:
     host:
       connections: 500
   host:
-    socket-timeout-millis: 60000
-    connect-timeout-millis: 60000
+    socket-timeout-millis: 5000000
+    connect-timeout-millis: 5000000
