@@ -33,6 +33,20 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+
 # zuul:
 #   routes:
 #     auth:
