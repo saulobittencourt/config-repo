@@ -8,8 +8,12 @@ server:
 eureka:
   instance:
     prefer-ip-address: true
+    hostname: https://eureka-server1.azurewebsites.net
+    instanceId: ${eureka.instance.hostname}:${spring.application.name}:443
   client:
     register-with-eureka: false
     fetch-registry: false
+    serviceUrl: 
+      defautlZone: https://eureka-server1.azurewebsites.net:443/eureka
   server:
     waitTimeInMsWhenSyncEmpty: 0
