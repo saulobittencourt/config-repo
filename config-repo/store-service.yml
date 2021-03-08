@@ -10,7 +10,8 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          #brokers: localhost:9092
+          brokers: 18.229.134.145:9092
           configuration:
             key:
               serializer: org.apache.kafka.common.serialization.StringSerializer
